@@ -19,8 +19,8 @@ if not st.session_state.initialized:
     text = st.text_area("半角[]で隠して入力")
     if st.button("スタート"):
         st.session_state.original = text
-        st.session_state.answers = re.findall(r'[([^]]+)]', text)
-        st.session_state.display = re.sub(r"[(.*?)]", PLACEHOLDER, text)
+        st.session_state.answers = re.findall(r'\[([^\]]+)\]', text)
+        st.session_state.display = re.sub(r"\[(.*?)\]", PLACEHOLDER, text)
         st.session_state.index = 0
         st.session_state.score = 0
         st.session_state.initialized = True
