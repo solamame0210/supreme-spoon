@@ -16,7 +16,7 @@ if "initialized" not in st.session_state:
 st.title("穴埋めクイズ")
 
 if not st.session_state.initialized:
-    text = st.text_area("半角[]で隠して入力")
+    text = st.text_area("半角 [ ] で隠して入力")
     if st.button("スタート"):
         st.session_state.original = text
         st.session_state.answers = re.findall(r'\[([^\]]+)\]', text)
